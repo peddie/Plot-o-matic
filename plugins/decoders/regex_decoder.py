@@ -31,7 +31,6 @@ class RegexDecoder(DataDecoder):
     
     if not re_result:
       return None
-
     re_groups = re_result.groups()
     var_names = self.variable_names.split(',')
     
