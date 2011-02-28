@@ -150,7 +150,7 @@ class ConftronDecoder(DataDecoder):
           bfd.update(self.awesome_multilayer_dict_to_boring_flat_dict(top_name+"_"+name+"_"+str(k), entry[k]))
       elif isinstance(entry, tuple):
         for k in range(0, len(entry)):
-          bfd.update({top_name+"_"+str(k): entry[k]})
+          bfd.update({top_name+"_"+name+"_"+str(k): entry[k]})
       else:
         bfd[top_name+"_"+name] = entry
     return bfd
