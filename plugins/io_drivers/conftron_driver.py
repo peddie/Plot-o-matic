@@ -55,7 +55,19 @@ class ConftronDriver(IODriver):
 
       for msg in cl.getchildren():
         m = {}
-        # the attributes right of of telemetry.xml
+        # get the attributes right out of telemetry.xml
+
+        # first check to see if there is a "plotomatic" attribute
+        try:
+          pom_attribs = msg.attrib['plotomatic']
+        except KeyError:
+          pom_attribs = None
+
+        # ignore if plotomatic attribute is "ignore"
+        if pom_attribs == 'ignore':
+          continue
+
+        # otherwise proceed as normal
         m['class'] = cl.attrib['name']
         m['type'] = msg.attrib['type']
         m['name'] = msg.attrib['name']
