@@ -142,17 +142,25 @@ class ConftronDecoder(DataDecoder):
 
   def awesome_multilayer_dict_to_boring_flat_dict(self, top_name, amd):
     bfd = {}
-    for name,entry in amd.iteritems():
-      if isinstance(entry, dict):
-        bfd.update(self.awesome_multilayer_dict_to_boring_flat_dict(top_name+"_"+name, entry))
-      elif isinstance(entry, list):
-        for k in range(0, len(entry)):
-          bfd.update(self.awesome_multilayer_dict_to_boring_flat_dict(top_name+"_"+name+"_"+str(k), entry[k]))
-      elif isinstance(entry, tuple):
-        for k in range(0, len(entry)):
-          bfd.update({top_name+"_"+name+"_"+str(k): entry[k]})
-      else:
-        bfd[top_name+"_"+name] = entry
+
+    # if it's a tuple
+    if isinstance(amd, tuple):
+      for k in range(0,len(amd)):
+        bfd.update({top_name+"_"+str(k):amd[k]})
+
+    # if it's a normal dict
+    else:
+        for name,entry in amd.iteritems():
+          if isinstance(entry, dict):
+            bfd.update(self.awesome_multilayer_dict_to_boring_flat_dict(top_name+"_"+name, entry))
+          elif isinstance(entry, list):
+            for k in range(0, len(entry)):
+              bfd.update(self.awesome_multilayer_dict_to_boring_flat_dict(top_name+"_"+name+"_"+str(k), entry[k]))
+          elif isinstance(entry, tuple):
+            for k in range(0, len(entry)):
+              bfd.update({top_name+"_"+name+"_"+str(k): entry[k]})
+          else:
+            bfd[top_name+"_"+name] = entry
     return bfd
 
   def get_config(self):
