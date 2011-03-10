@@ -53,39 +53,40 @@ class ConftronDriver(IODriver):
       exec("import "+cl.attrib['name'])
       class_module = eval(cl.attrib['name'])
 
-      for msg in cl.getchildren():
-        m = {}
-        # get the attributes right out of telemetry.xml
+      if (not cl.attrib.has_key("plotomatic")) or (cl.attrib['plotomatic'] == 'ignore'):
+        for msg in cl.getchildren():
+          m = {}
+          # get the attributes right out of telemetry.xml
 
-        # first check to see if there is a "plotomatic" attribute
-        try:
-          pom_attribs = msg.attrib['plotomatic']
-        except KeyError:
-          pom_attribs = None
+          # first check to see if there is a "plotomatic" attribute
+          try:
+            pom_attribs = msg.attrib['plotomatic']
+          except KeyError:
+            pom_attribs = None
 
-        # ignore if plotomatic attribute is "ignore"
-        if pom_attribs == 'ignore':
-          continue
+          # ignore if plotomatic attribute is "ignore"
+          if pom_attribs == 'ignore':
+            continue
 
-        # otherwise proceed as normal
-        m['class'] = cl.attrib['name']
-        m['type'] = msg.attrib['type']
-        m['name'] = msg.attrib['name']
+          # otherwise proceed as normal
+          m['class'] = cl.attrib['name']
+          m['type'] = msg.attrib['type']
+          m['name'] = msg.attrib['name']
 
-        # create the channel name if one isn't explicitely specified
-        try:
-          m['channel'] = msg.attrib['channel']
-        except KeyError:
-          m['channel'] = m['class']+"_"+m['type']+"_"+m['name']
+          # create the channel name if one isn't explicitely specified
+          try:
+            m['channel'] = msg.attrib['channel']
+          except KeyError:
+            m['channel'] = m['class']+"_"+m['type']+"_"+m['name']
 
-        # get the decoder
-        m['decoder'] = eval("class_module."+m['type'])
+          # get the decoder
+          m['decoder'] = eval("class_module."+m['type'])
 
-        # subscribe to the channel
-        m['subscription'] = self.lc.subscribe(m['channel'], self.lcm_handler )
+          # subscribe to the channel
+          m['subscription'] = self.lc.subscribe(m['channel'], self.lcm_handler )
 
-        # add this entry to the messages dictionary
-        self.messages[m['channel']] = m
+          # add this entry to the messages dictionary
+          self.messages[m['channel']] = m
 
   def close(self):
     for msg in self.messages.values():
