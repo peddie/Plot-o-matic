@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
-#import psyco
-#psyco.full()
+try:
+  import psyco
+  psyco.full()
+except:
+  print "Psyco JIT compiler not found; skipping."  
 
 # If wxversion is installed, make sure we are
 # using wx >= 2.8
