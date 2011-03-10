@@ -119,6 +119,8 @@ class ConftronDecoder(DataDecoder):
   
     sys.path.append(self.ap_project_root+"/conftron/plot-o-matic_autogen")
     import dict_of_struct
+    self.dict_of_struct = dict_of_struct
+
 
   def decode(self, message):
     """
@@ -127,9 +129,8 @@ class ConftronDecoder(DataDecoder):
 
     sys.path.append(self.ap_project_root+"/conftron/plot-o-matic_autogen")
 
-    import dict_of_struct
     try:
-      amd = dict_of_struct.__dict__[message['type']](message['message'])
+      amd = self.dict_of_struct.__dict__[message['type']](message['message'])
     except TypeError as err:
       print str(err)+", probably something in types.xml changed"
       return None
