@@ -1,5 +1,5 @@
-from enthought.traits.api import Str
-from enthought.traits.ui.api import View
+from traits.api import Str
+from traitsui.api import View
 
 import sys
 

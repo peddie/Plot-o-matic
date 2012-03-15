@@ -1,5 +1,5 @@
-from enthought.traits.api import Str, Range
-from enthought.traits.ui.api import View, Item, TextEditor
+from traits.api import Str, Range
+from traitsui.api import View, Item, TextEditor
 
 import time
 

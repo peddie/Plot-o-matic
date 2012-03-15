@@ -1,5 +1,5 @@
-from enthought.traits.api import Str, Int
-from enthought.traits.ui.api import View, Item, TextEditor
+from traits.api import Str, Int
+from traitsui.api import View, Item, TextEditor
 
 import time
 import socket

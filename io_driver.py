@@ -1,5 +1,5 @@
 import threading as t
-from enthought.traits.api import HasTraits, Int, Str, List, DelegatesTo, Instance
+from traits.api import HasTraits, Int, Str, List, DelegatesTo, Instance
 from data_decoder import DataDecoder
 
 from variables import Variables

@@ -1,5 +1,5 @@
-from enthought.traits.api import HasTraits, List, Str, Float, Bool, Instance, Enum, on_trait_change
-from enthought.traits.ui.api import View, Item, ListEditor, HGroup, VGroup, TextEditor
+from traits.api import HasTraits, List, Str, Float, Bool, Instance, Enum, on_trait_change
+from traitsui.api import View, Item, ListEditor, HGroup, VGroup, TextEditor
 from wx import CallAfter
 from matplotlib.figure import Figure
 import matplotlib.font_manager

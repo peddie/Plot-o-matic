@@ -1,7 +1,7 @@
 from variables import Expression, Variables
 
-from enthought.traits.api import HasTraits, Str, Regex, Either,This, List, Instance, DelegatesTo, Any, on_trait_change, Float, Range
-from enthought.traits.ui.api import TreeEditor, TreeNode, View, Item, VSplit, \
+from traits.api import HasTraits, Str, Regex, Either,This, List, Instance, DelegatesTo, Any, on_trait_change, Float, Range
+from traitsui.api import TreeEditor, TreeNode, View, Item, VSplit, \
   HGroup, Handler, Group, Include, ValueEditor, HSplit, ListEditor, InstanceEditor
 
 

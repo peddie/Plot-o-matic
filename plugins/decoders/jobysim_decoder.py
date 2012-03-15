@@ -1,5 +1,5 @@
-from enthought.traits.api import Str, Bool, Enum, List
-from enthought.traits.ui.api import View, Item
+from traits.api import Str, Bool, Enum, List
+from traitsui.api import View, Item
 from data_decoder import DataDecoder
 import re
 

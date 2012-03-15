@@ -1,5 +1,5 @@
-from enthought.traits.api import Str, Instance
-from enthought.traits.ui.api import View, Item
+from traits.api import Str, Instance
+from traitsui.api import View, Item
 from data_decoder import DataDecoder
 import sys
 import os

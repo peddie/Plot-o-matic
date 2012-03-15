@@ -1,10 +1,10 @@
-from enthought.traits.api import Str, Range, HasTraits, Instance, Dict, Float, Bool, on_trait_change, List, DelegatesTo
-from enthought.traits.ui.api import Item, View, HGroup, VGroup, TextEditor, InstanceEditor, ListEditor
+from traits.api import Str, Range, HasTraits, Instance, Dict, Float, Bool, on_trait_change, List, DelegatesTo
+from traitsui.api import Item, View, HGroup, VGroup, TextEditor, InstanceEditor, ListEditor
 
-import enthought.chaco.api as chaco
-from enthought.enable.component_editor import ComponentEditor
-from enthought.chaco.tools.api import PanTool, ZoomTool, LegendTool, TraitsTool, DragZoom
-from enthought.pyface.api import GUI
+import chaco.api as chaco
+from enable.component_editor import ComponentEditor
+from chaco.tools.api import PanTool, ZoomTool, LegendTool, TraitsTool, DragZoom
+from pyface.api import GUI
 
 from viewers import Viewer
 from variables import Expression
@@ -224,7 +224,7 @@ class Plot(Viewer):
     return (y_min, y_max)
 
   def update(self):
-    from enthought.pyface.api import GUI
+    from pyface.api import GUI
     GUI.invoke_later(self.update_unsafe)
 
   def update_unsafe(self):

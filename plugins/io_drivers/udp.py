@@ -1,5 +1,5 @@
-from enthought.traits.api import Str, Float, Range, Int, Bool, on_trait_change
-from enthought.traits.ui.api import View, Item
+from traits.api import Str, Float, Range, Int, Bool, on_trait_change
+from traitsui.api import View, Item
 
 import time
 import socket

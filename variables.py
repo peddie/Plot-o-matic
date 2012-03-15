@@ -1,6 +1,6 @@
-from enthought.traits.api import HasTraits, Int, Float, Bool, Dict, List, Property, Enum, Color, Instance, Str, Any, on_trait_change, Event, Button, BaseStr
-from enthought.traits.ui.api import View, Item, ValueEditor, TabularEditor, HSplit, TextEditor
-from enthought.traits.ui.tabular_adapter import TabularAdapter
+from traits.api import HasTraits, Int, Float, Bool, Dict, List, Property, Enum, Color, Instance, Str, Any, on_trait_change, Event, Button, BaseStr
+from traitsui.api import View, Item, ValueEditor, TabularEditor, HSplit, TextEditor
+from traitsui.tabular_adapter import TabularAdapter
 import time
 
 import math, numpy

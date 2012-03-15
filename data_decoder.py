@@ -1,4 +1,4 @@
-from enthought.traits.api import HasTraits, Instance, Str
+from traits.api import HasTraits, Instance, Str
 from variables import Variables
 
 class DataDecoder(HasTraits):

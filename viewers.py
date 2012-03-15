@@ -1,5 +1,5 @@
-from enthought.traits.api import Str, Bool, Range, HasTraits, Instance, on_trait_change, List
-from enthought.traits.ui.api import Item, View
+from traits.api import Str, Bool, Range, HasTraits, Instance, on_trait_change, List
+from traitsui.api import Item, View
 
 import threading as t
 import time

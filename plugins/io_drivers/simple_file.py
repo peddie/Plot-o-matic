@@ -1,6 +1,6 @@
 from io_driver import IODriver
-from enthought.traits.api import Str, Range, File, Any, on_trait_change
-from enthought.traits.ui.api import View, Item
+from traits.api import Str, Range, File, Any, on_trait_change
+from traitsui.api import View, Item
 import time
 
 class SimpleFileDriver(IODriver):

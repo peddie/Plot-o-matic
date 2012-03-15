@@ -3,11 +3,11 @@ from enthought.tvtk.pyface.scene_editor import SceneEditor
 from enthought.tvtk.pyface import actors
 from enthought.tvtk.api import tvtk
 
-from enthought.traits.api import HasTraits, Str, Regex, List, Instance, DelegatesTo, Any, on_trait_change, Float, Range
-from enthought.traits.ui.api import TreeEditor, TreeNode, View, Item, VSplit, \
+from traits.api import HasTraits, Str, Regex, List, Instance, DelegatesTo, Any, on_trait_change, Float, Range
+from traitsui.api import TreeEditor, TreeNode, View, Item, VSplit, \
   HGroup, Handler, Group, Include, ValueEditor, HSplit, ListEditor, InstanceEditor
 
-from enthought.pyface.api import GUI
+from pyface.api import GUI
 
 import numpy
 from viewers import Viewer

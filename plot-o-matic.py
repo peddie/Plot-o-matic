@@ -25,10 +25,10 @@ from plugins.viewers_all import *
 
 from plugin_manager import *
 
-from enthought.traits.api import HasTraits, Str, Regex, List, Instance, DelegatesTo
-from enthought.traits.ui.api import TreeEditor, TreeNode, View, Item, VSplit, \
+from traits.api import HasTraits, Str, Regex, List, Instance, DelegatesTo
+from traitsui.api import TreeEditor, TreeNode, View, Item, VSplit, \
   HGroup, Controller, Handler, Group, Include, ValueEditor, HSplit, ListEditor, InstanceEditor
-from enthought.traits.ui.menu import Menu, Action, Separator, MenuBar
+from traitsui.menu import Menu, Action, Separator, MenuBar
 
 import yaml
 import wx
